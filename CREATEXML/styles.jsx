@@ -49,3 +49,48 @@ function getstyles(){
     writetekst('</tablestyles>\r');
     */
 }
+
+function create_paragraphstyle(word){
+    var styleexist = false;
+    for (var j = 0; j <doc.allParagraphStyles.length; j++) {  
+        var  style= doc.allParagraphStyles[j];
+        beep();
+    }
+}
+
+function create_characterstyle(word){
+    //
+    // check of style al is aangemaakt. dan alleen verwijzen
+    //
+
+
+
+
+    var styleexist = false;
+    for (var j = 0; j <doc.allCharacterStyles.length; j++) {  
+        var  style= doc.allCharacterStyles[j];
+    //    var t1 = style.appliedFont;
+    //    var t0 = word.appliedFont;
+    //    if (style.appliedFont == word.appliedFont){
+    //        var cs = style;
+    //        styleexist = true;
+    //
+    //    }
+
+    }
+    if (styleexist == false){
+    	//
+        // add style
+        //
+        var cs = doc.characterStyles.add();
+        cs.appliedFont = word.appliedFont;
+        //
+        //
+        //
+    }
+
+    
+    
+
+    return cs;
+}

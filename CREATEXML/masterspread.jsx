@@ -11,7 +11,7 @@ function getmasterspreads(){
         
         inspectObjectProps_object_array_notnested(master,'IDmaster');
         //
-        // Comment van Martijn
+        //
         //
         zitem=0;
 

@@ -1,4 +1,5 @@
 function getword(pi){
+    //
     
     writetekst('<Words>\r');
     
@@ -7,8 +8,31 @@ function getword(pi){
         var paragraphstyleid = word.appliedParagraphStyle.id;
         var charstyleid = word.appliedCharacterStyle.id;
         var strokecolorid = word.strokeColor.id;
-        var fillcolorid = word.fillColor.id;
-        
+        var fillcolorid = word.fillColor.id; 
+        var styleOverridden = word.styleOverridden;
+        if (styleOverridden == true){
+            //
+            //
+            //
+            create_paragraphstyle(word);
+            //
+            //
+            //
+            cs = create_characterstyle(word);
+            //
+
+            // koppel style aan woord;
+            //
+            word.appliedCharacterStyle = cs.name;
+            //
+            // ophalen laatste informatie over betreffend woord
+            //
+            var paragraphstyleid = word.appliedParagraphStyle.id;
+            var charstyleid = word.appliedCharacterStyle.id;
+            var strokecolorid = word.strokeColor.id;
+            var fillcolorid = word.fillColor.id; 
+        }
+         
         writetekst('<Word index="'+word.index+ '">\r');
         
         writetekst('<contents><![CDATA['+  word.contents + ']]></contents>\r');
@@ -16,7 +40,6 @@ function getword(pi){
         writetekst('<charstyleid>'+ charstyleid + '</charstyleid>\r');
         writetekst('<strokecolorid>'+ strokecolorid + '</strokecolorid>\r');
         writetekst('<fillcolorid>'+ fillcolorid + '</fillcolorid>\r');
-
 
         writetekst('<styleOverridden>'+  word.styleOverridden + '</styleOverridden>\r');
         

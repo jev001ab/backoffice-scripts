@@ -177,19 +177,19 @@ function IsTextFrame(pi){
 
     inspectObjectProps_object_array_notnested(pi,'IDroot');
     inspectObjectProps_object_array_notnested(pi.itemLayer,'itemLayer_');
-    inspectObjectProps_object_array_notnested(pi.parentStory.appliedFont,'parentStory.appliedFont_');
-    inspectObjectProps_object_array_notnested(pi.parentStory.fillColor,'storyfillcolor_');
+    //inspectObjectProps_object_array_notnested(pi.parentStory.appliedFont,'parentStory.appliedFont_');
+    //inspectObjectProps_object_array_notnested(pi.parentStory.fillColor,'storyfillcolor_');
     inspectObjectProps_object_array_notnested(pi.transparencySettings.blendingSettings,'transparencySettings_blendingSettings_');
     inspectObjectProps_object_array_notnested(pi.transparencySettings.gradientFeatherSettings,'transparencySettings_gradientFeatherSettings_');
 
     inspectObjectProps_object_array_notnested(pi.textFramePreferences,'textFramePreferences_');
-    inspectObjectProps_object_array_notnested(pi.parent,'parent_');
-    inspectObjectProps_object_array_notnested(pi.fillColor,'fillColor_');
-    inspectObjectProps_object_array_notnested(pi.strokeColor,'strokeColor_');
+    //inspectObjectProps_object_array_notnested(pi.parent,'parent_');
+    //inspectObjectProps_object_array_notnested(pi.fillColor,'fillColor_');
+    //inspectObjectProps_object_array_notnested(pi.strokeColor,'strokeColor_');
     //
     //
     //
-    inspectObjectProps_object_array_notnested(pi.appliedObjectStyle,'appliedObjectStyle_');
+    //inspectObjectProps_object_array_notnested(pi.appliedObjectStyle,'appliedObjectStyle_');
     // points
     //
     getpaths(pi.paths);

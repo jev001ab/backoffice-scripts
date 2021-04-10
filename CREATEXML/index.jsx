@@ -68,11 +68,13 @@ getgradients();
 //
 getCSV();
 //
-getstyles();
+//getstyles();
 //
 getmasterspreads();
 //
 getSpreads();
+//
+getstyles();
 //
 
 
