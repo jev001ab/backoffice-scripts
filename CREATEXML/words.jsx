@@ -5,11 +5,12 @@ function getword(pi){
     
     for(var p = 0; p < pi.words.length; p++){
         var word = pi.words[p];
-        var paragraphstyleid = word.appliedParagraphStyle.id;
+        //var paragraphstyleid = word.appliedParagraphStyle.id;
         var charstyleid = word.appliedCharacterStyle.id;
-        var strokecolorid = word.strokeColor.id;
-        var fillcolorid = word.fillColor.id; 
+        //var strokecolorid = word.strokeColor.id;
+        //var fillcolorid = word.fillColor.id; 
         var styleOverridden = word.styleOverridden;
+        var charstyleused=0;
         if (styleOverridden == true){
             //
             //
@@ -27,19 +28,21 @@ function getword(pi){
             //
             // ophalen laatste informatie over betreffend woord
             //
-            var paragraphstyleid = word.appliedParagraphStyle.id;
+           // var paragraphstyleid = word.appliedParagraphStyle.id;
             var charstyleid = word.appliedCharacterStyle.id;
-            var strokecolorid = word.strokeColor.id;
-            var fillcolorid = word.fillColor.id; 
+           // var strokecolorid = word.strokeColor.id;
+           // var fillcolorid = word.fillColor.id; 
+           charstyleused = 1;
         }
          
         writetekst('<Word index="'+word.index+ '">\r');
         
         writetekst('<contents><![CDATA['+  word.contents + ']]></contents>\r');
-        writetekst('<paragraphstyleid>'+ paragraphstyleid + '</paragraphstyleid>\r');
+       // writetekst('<paragraphstyleid>'+ paragraphstyleid + '</paragraphstyleid>\r');
+        writetekst('<charstyleused>'+ charstyleused + '</charstyleused>\r');
         writetekst('<charstyleid>'+ charstyleid + '</charstyleid>\r');
-        writetekst('<strokecolorid>'+ strokecolorid + '</strokecolorid>\r');
-        writetekst('<fillcolorid>'+ fillcolorid + '</fillcolorid>\r');
+       // writetekst('<strokecolorid>'+ strokecolorid + '</strokecolorid>\r');
+      //  writetekst('<fillcolorid>'+ fillcolorid + '</fillcolorid>\r');
 
         writetekst('<styleOverridden>'+  word.styleOverridden + '</styleOverridden>\r');
         

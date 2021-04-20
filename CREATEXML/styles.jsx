@@ -15,6 +15,7 @@ function getstyles(){
         var  style= doc.allParagraphStyles[j];
         writetekst('<paragraphstyle nr="'+ j +'">\r');
         inspectObjectProps_object( style);
+        inspectObjectProps_object_array_notnested(style.appliedFont,'style.appliedFont_');
         writetekst('</paragraphstyle>\r');
    
     }
@@ -24,6 +25,7 @@ function getstyles(){
         var  style= doc.allCharacterStyles[j];
         writetekst('<charstyle nr="'+ j +'">\r');
         inspectObjectProps_object( style);
+        //inspectObjectProps_object_array_notnested(style.appliedFont,'style.appliedFont_');
         writetekst('</charstyle>\r');
    
     }

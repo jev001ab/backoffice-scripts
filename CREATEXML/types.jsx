@@ -190,11 +190,30 @@ function IsTextFrame(pi){
     //
     //
     //inspectObjectProps_object_array_notnested(pi.appliedObjectStyle,'appliedObjectStyle_');
+
+    //
     // points
     //
     getpaths(pi.paths);
     //
-    getword(pi);
+    // paragraph
+    //
+    writetekst('<Paragraphs>\r');
+    
+    for (var u=0; u< pi.paragraphs.length; u++){
+    var paragraph = pi.paragraphs[u];
+      writetekst('<Paragraph indexnr="'+ u +'">' );  //'</ParagraphstyleID>\r'
+      writetekst('<ParagraphstyleID>'+ paragraph.appliedParagraphStyle.id + '</ParagraphstyleID>\r');
+      //beep();
+      getword(paragraph);
+
+
+      writetekst('</Paragraph>' ); 
+    }
+    writetekst('</Paragraphs>\r');
+
+    //
+    //getword(pi);
     /*
     writetekst('<Paragraphs>\r');
     

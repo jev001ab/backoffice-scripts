@@ -54,7 +54,22 @@ function unicodeEscape(str) {
 //
 function inspectObjectProps_object(obj){
     for(var key2 in obj.properties){
-        writetekst('<'+ key2 +'>'+  obj[key2]+ '</'+ key2 + '>\r');
+        var item = '' + obj[key2];
+        var n = item.indexOf('[object');
+        if (n!=-1){
+            try {   
+                var objID = obj[key2].id;
+                writetekst('<'+ key2 +'_id>'+  objID+ '</'+ key2 + '_id>\r');
+                writetekst('<'+ key2 +'_object>'+  obj[key2]+ '</'+ key2 + '_object>\r');
+
+            
+                } catch (e) {
+                    // beep();
+                }
+        } else {
+            writetekst('<'+ key2 +'>'+  obj[key2]+ '</'+ key2 + '>\r');
+        }
+        
     }    
 }
 //
