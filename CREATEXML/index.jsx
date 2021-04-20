@@ -1,5 +1,5 @@
 // @target InDesign
-var version = "2.0.5";
+var version = "2.0.6";
 
 //@include "default.jsx";
 //@include "writetekst.jsx";

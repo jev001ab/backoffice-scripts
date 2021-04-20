@@ -11,6 +11,10 @@ function getword(pi){
         //var fillcolorid = word.fillColor.id; 
         var styleOverridden = word.styleOverridden;
         var charstyleused=0;
+        var styleuniqueID = word.appliedCharacterStyle.styleUniqueId;
+        if (styleuniqueID != "") {
+          charstyleused=1;
+        }
         if (styleOverridden == true){
             //
             //
@@ -32,7 +36,7 @@ function getword(pi){
             var charstyleid = word.appliedCharacterStyle.id;
            // var strokecolorid = word.strokeColor.id;
            // var fillcolorid = word.fillColor.id; 
-           charstyleused = 1;
+           charstyleused=1;
         }
          
         writetekst('<Word index="'+word.index+ '">\r');
