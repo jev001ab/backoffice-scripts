@@ -204,7 +204,6 @@ function IsTextFrame(pi){
     var paragraph = pi.paragraphs[u];
       writetekst('<Paragraph indexnr="'+ u +'">' );  //'</ParagraphstyleID>\r'
       writetekst('<ParagraphstyleID>'+ paragraph.appliedParagraphStyle.id + '</ParagraphstyleID>\r');
-      //beep();
       getword(paragraph);
 
 
