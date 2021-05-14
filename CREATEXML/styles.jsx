@@ -85,7 +85,43 @@ function create_characterstyle(word){
         // add style
         //
         var cs = doc.characterStyles.add();
+        /*
         cs.appliedFont = word.appliedFont;
+        cs.strokeColor = word.strokeColor;
+        cs.underlineColor = word.underlineColor;
+        cs.underlineGapColor = word.underlineGapColor;
+        cs.underlineType = word.underlineType;
+        cs.strikeThroughColor = word.strikeThroughColor;
+        cs.strikeThroughGapColor = word.strikeThroughGapColor;
+        cs.strikeThroughType = word.strikeThroughType;
+        cs.fillColor = word.fillColor;
+        cs.appliedLanguage = word.appliedLanguage;
+        cs.kentenFillColor = word.kentenFillColor;
+        cs.kentenStrokeColor = word.kentenStrokeColor;
+        cs.kentenFont = word.kentenFont;
+        cs.rubyFill = word.rubyFill;
+        cs.rubyStroke = word.rubyStroke;
+        cs.rubyFont = word.rubyFont;
+        cs.pointSize = word.pointSize;
+        cs.leading = word.leading;
+        cs.baselineShift = word.baselineShift;
+        cs.capitalization = word.capitalization;
+        cs.characterAlignment = word.characterAlignment;
+        */
+        for(var key2 in cs.properties){
+            try{
+                cs[key2] = word[key2];
+            } catch (e) {
+                // beep();
+            }
+            
+        }
+            
+
+
+
+       
+        //beep();
         //
         //
         //
