@@ -1,5 +1,5 @@
 // @target InDesign
-var version = "2.0.7";
+var version = "2.0.8";
 
 //@include "default.jsx";
 //@include "writetekst.jsx";
@@ -68,8 +68,6 @@ getgradients();
 //
 getCSV();
 //
-//getstyles();
-//
 getmasterspreads();
 //
 getSpreads();
@@ -80,5 +78,3 @@ getstyles();
 
 writetekst('</export2html>\r');
 filexml.close();
-
-//beep();

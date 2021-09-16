@@ -52,12 +52,25 @@ function getstyles(){
     */
 }
 
-function create_paragraphstyle(word){
+function create_paragraphstyle(ps){
     var styleexist = false;
-    for (var j = 0; j <doc.allParagraphStyles.length; j++) {  
+    /*for (var j = 0; j <doc.allParagraphStyles.length; j++) {  
         var  style= doc.allParagraphStyles[j];
-        beep();
+        //beep();
     }
+    */
+    if (styleexist == false){
+        var nps = doc.paragraphStyles.add();
+        for(var key2 in nps.properties){
+            try{
+                nps[key2] = ps[key2];
+            } catch (e) {
+                // beep();
+            }
+            
+        }
+    }
+    return nps;
 }
 
 function create_characterstyle(word){

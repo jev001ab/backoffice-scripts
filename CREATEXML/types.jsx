@@ -201,9 +201,14 @@ function IsTextFrame(pi){
     writetekst('<Paragraphs>\r');
     
     for (var u=0; u< pi.paragraphs.length; u++){
-    var paragraph = pi.paragraphs[u];
+      var paragraph = pi.paragraphs[u];
+      var ps = create_paragraphstyle(paragraph);
+      paragraph.appliedParagraphStyle = ps.name;
       writetekst('<Paragraph indexnr="'+ u +'">' );  //'</ParagraphstyleID>\r'
       writetekst('<ParagraphstyleID>'+ paragraph.appliedParagraphStyle.id + '</ParagraphstyleID>\r');
+      //inspectObjectProps_object_array_notnested(paragraph,'paragraph_');
+    //  inspectObjectProps_object( paragraph);
+    //  inspectObjectProps_object_array_notnested(paragraph.appliedFont,'paragraph.appliedFont');
       getword(paragraph);
 
 

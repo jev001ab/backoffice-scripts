@@ -1,6 +1,17 @@
 function getword(pi){
     //
-    
+    /*
+    var t = pi.texts[0];
+    var enters = new Array()
+    for(var p = 0; p < pi.characters.length; p++){
+      var character = pi.characters[p];
+      var content = character.contents;
+      var index = character.index;
+      
+
+      beep();
+    }
+    */
     writetekst('<Words>\r');
     
     for(var p = 0; p < pi.words.length; p++){
