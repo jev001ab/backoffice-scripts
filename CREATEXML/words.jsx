@@ -52,7 +52,7 @@ function getword(pi){
          
         writetekst('<Word index="'+word.index+ '">\r');
         
-        writetekst('<contents><![CDATA['+  word.contents + ']]></contents>\r');
+        writetekst('<contents><![CDATA['+  word.contents.replace(/[\x00-\x1F]/g, "") + ']]></contents>\r'); //  word.contents.replace(/[^\x00-\x1F]/g, "")
        // writetekst('<paragraphstyleid>'+ paragraphstyleid + '</paragraphstyleid>\r');
         writetekst('<charstyleused>'+ charstyleused + '</charstyleused>\r');
         writetekst('<charstyleid>'+ charstyleid + '</charstyleid>\r');

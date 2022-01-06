@@ -1,4 +1,5 @@
 function IsGraphicLine(pi){
+    var constructor = pi.constructor.name;
     inspectObjectProps_object_array_notnested(pi,'IDroot');
     inspectObjectProps_object_array_notnested(pi.itemLayer,'itemLayer_');
     inspectObjectProps_object_array_notnested(pi.transparencySettings.blendingSettings,'transparencySettings_blendingSettings_');
@@ -20,6 +21,7 @@ function IsGraphicLine(pi){
     
 }
 function IsOval(pi,ID){
+    var constructor = pi.constructor.name;
     objExpOptions = pi.objectExportOptions;  
     objExpOptions.altTextSourceType = SourceType.SOURCE_CUSTOM;  
     objExpOptions.customAltText = "[" +ID + "]";  
@@ -42,6 +44,7 @@ function IsOval(pi,ID){
     
     }
 function IsPolygon(pi,ID){
+    var constructor = pi.constructor.name;
     objExpOptions = pi.objectExportOptions;  
     objExpOptions.altTextSourceType = SourceType.SOURCE_CUSTOM;  
     objExpOptions.customAltText = "[" +ID + "]";  
@@ -79,6 +82,7 @@ function IsGroup(pi){
 
 function IsPDF(pi){
     //beep();
+    var constructor = pi.constructor.name;
     inspectObjectProps_object_array_notnested(pi,'IDroot');
     inspectObjectProps_object_array_notnested(pi.itemLayer,'itemLayer_');
     inspectObjectProps_object_array_notnested(pi.itemLink,'itemLink_');
@@ -100,6 +104,7 @@ function IsPDF(pi){
     }
 function IsImageEPS(pi){
     //beep();
+    var constructor = pi.constructor.name;
      inspectObjectProps_object_array_notnested(pi,'IDroot');
      inspectObjectProps_object_array_notnested(pi.itemLayer,'itemLayer_');
      inspectObjectProps_object_array_notnested(pi.itemLink,'itemLink_');
@@ -120,6 +125,7 @@ function IsImageEPS(pi){
     
     }
 function IsRectangle(pi,ID){
+    var constructor = pi.constructor.name;
     objExpOptions = pi.objectExportOptions;  
     objExpOptions.altTextSourceType = SourceType.SOURCE_CUSTOM;  
     objExpOptions.customAltText = "[" +ID + "]";  
@@ -167,6 +173,7 @@ function IsRectangle(pi,ID){
     
     }
 function IsTextFrame(pi){
+    var constructor = pi.constructor.name;
     writetekst('<Layer>'+ pi.itemLayer.name.replace(/&/g, "&amp;").replace(/>/g, "&gt;").replace(/</g, "&lt;")  + '</Layer>\r');
     
     writetekst('<LayerType>T</LayerType>\r');
@@ -204,7 +211,7 @@ function IsTextFrame(pi){
       var paragraph = pi.paragraphs[u];
       var ps = create_paragraphstyle(paragraph);
       paragraph.appliedParagraphStyle = ps.name;
-      writetekst('<Paragraph indexnr="'+ u +'">' );  //'</ParagraphstyleID>\r'
+      writetekst('<Paragraph indexnr="'+ u +'">\r' );  //'</ParagraphstyleID>\r'
       writetekst('<ParagraphstyleID>'+ paragraph.appliedParagraphStyle.id + '</ParagraphstyleID>\r');
       //inspectObjectProps_object_array_notnested(paragraph,'paragraph_');
     //  inspectObjectProps_object( paragraph);
@@ -212,7 +219,7 @@ function IsTextFrame(pi){
       getword(paragraph);
 
 
-      writetekst('</Paragraph>' ); 
+      writetekst('</Paragraph>\r' ); 
     }
     writetekst('</Paragraphs>\r');
 
