@@ -53,23 +53,29 @@ function getstyles(){
 }
 
 function create_paragraphstyle(ps){
-    var styleexist = false;
-    /*for (var j = 0; j <doc.allParagraphStyles.length; j++) {  
-        var  style= doc.allParagraphStyles[j];
-        //beep();
-    }
-    */
-    if (styleexist == false){
+
+    //
+    var styleid_nostyle = doc.allParagraphStyles[0].id;
+    var style_ps_id = ps.appliedParagraphStyle.id;
+    var style_overridden = ps.styleOverridden;
+    //
+    //
+    if ( style_overridden == true){
         var nps = doc.paragraphStyles.add();
         for(var key2 in nps.properties){
             try{
                 nps[key2] = ps[key2];
+               // beep();
             } catch (e) {
                 // beep();
             }
             
         }
-    }
+
+    } else{
+        nps = ps.appliedParagraphStyle;
+    }     
+
     return nps;
 }
 

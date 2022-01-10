@@ -30,7 +30,7 @@ function getword(pi){
             //
             //
             //
-            create_paragraphstyle(word);
+            //create_paragraphstyle(word);
             //
             //
             //
@@ -52,7 +52,7 @@ function getword(pi){
          
         writetekst('<Word index="'+word.index+ '">\r');
         
-        writetekst('<contents><![CDATA['+  word.contents.replace(/[\x00-\x1F]/g, "") + ']]></contents>\r'); //  word.contents.replace(/[^\x00-\x1F]/g, "")
+        writetekst('<contents><![CDATA['+  word.contents.replace(/[\x07]/g, "") + ']]></contents>\r'); //  word.contents.replace(/[^\x00-\x1F]/g, "") ^ betekend NOT
        // writetekst('<paragraphstyleid>'+ paragraphstyleid + '</paragraphstyleid>\r');
         writetekst('<charstyleused>'+ charstyleused + '</charstyleused>\r');
         writetekst('<charstyleid>'+ charstyleid + '</charstyleid>\r');

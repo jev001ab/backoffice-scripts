@@ -1,5 +1,5 @@
 // @target InDesign
-var version = "2.1.1";
+var version = "2.2.0";
 
 //@include "default.jsx";
 //@include "writetekst.jsx";
@@ -15,6 +15,7 @@ var version = "2.1.1";
 //@include "gradients.jsx";
 //@include "spreads.jsx";
 //@include "styles.jsx";
+//@include "characters.jsx";
 
 var doc = app.activeDocument;
 var path = 'c:/TEST/';
