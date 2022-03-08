@@ -1,5 +1,5 @@
 // @target InDesign
-var version = "2.2.0";
+var version = "2.2.2";
 
 //@include "default.jsx";
 //@include "writetekst.jsx";
@@ -27,7 +27,11 @@ var textFrame, recrangle, objExpOptions,
 var DEF_Width =doc.documentPreferences.pageWidth;      
 var DEF_Height=doc.documentPreferences.pageHeight;  
 var DEF_MeasurementsUnits = doc.viewPreferences.horizontalMeasurementUnits ;
-
+//
+//
+// dummy noodzakelijk om utf8 af te dwingen .
+//
+var dummy_utf8 = "Du ser mig kun for det tøj jeg har på";
 //
 // change export to RGB (where possible)
 //   

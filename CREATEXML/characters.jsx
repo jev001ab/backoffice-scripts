@@ -8,7 +8,8 @@ function getchar(pi){
     //
     for(var p = 0; p < pi.characters.length; p++){
         var character = pi.characters[p];
-        var content = character.contents;
+        //var style = character.appliedCharacterStyle;
+        //var content = character.contents;
         var styleOverridden = character.styleOverridden;
         //
         // if styleoverridden (maak style) , moet nog
