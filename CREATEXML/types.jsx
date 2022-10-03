@@ -1,4 +1,4 @@
-function IsGraphicLine(pi){
+function IsGraphicLine(pi,ID){
     var constructor = pi.constructor.name;
     inspectObjectProps_object_array_notnested(pi,'IDroot');
     inspectObjectProps_object_array_notnested(pi.itemLayer,'itemLayer_');
@@ -67,7 +67,7 @@ function IsPolygon(pi,ID){
       getpaths(pi.paths);
     
     }
-function IsGroup(pi){
+function IsGroup(pi,ID){
     var ag = pi.allGraphics[0];
 
     //        beep();
@@ -80,7 +80,7 @@ function IsGroup(pi){
     //             inspectObjectProps_object_array_notnested(pi.strokeColor,'strokeColor_');
     }
 
-function IsPDF(pi){
+function IsPDF(pi,ID){
     //beep();
     var constructor = pi.constructor.name;
     inspectObjectProps_object_array_notnested(pi,'IDroot');
@@ -102,7 +102,7 @@ function IsPDF(pi){
     
     
     }
-function IsImageEPS(pi){
+function IsImageEPS(pi,ID){
     //beep();
     var constructor = pi.constructor.name;
      inspectObjectProps_object_array_notnested(pi,'IDroot');
@@ -172,8 +172,9 @@ function IsRectangle(pi,ID){
     
     
     }
-function IsTextFrame(pi){
+function IsTextFrame(pi,ID){
     var constructor = pi.constructor.name;
+    var customalttext = pi.objectExportOptions.customAltText;
     writetekst('<Layer>'+ pi.itemLayer.name.replace(/&/g, "&amp;").replace(/>/g, "&gt;").replace(/</g, "&lt;")  + '</Layer>\r');
     
     writetekst('<LayerType>T</LayerType>\r');
@@ -193,6 +194,8 @@ function IsTextFrame(pi){
     //inspectObjectProps_object_array_notnested(pi.parent,'parent_');
     //inspectObjectProps_object_array_notnested(pi.fillColor,'fillColor_');
     //inspectObjectProps_object_array_notnested(pi.strokeColor,'strokeColor_');
+    writetekst('<CustomAltText>' + customalttext + '</CustomAltText>\r');
+
     //
     //
     //

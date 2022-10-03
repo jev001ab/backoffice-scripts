@@ -1,5 +1,5 @@
 // @target InDesign
-var version = "2.2.2";
+var version = "2.2.7";
 
 //@include "default.jsx";
 //@include "writetekst.jsx";
@@ -16,6 +16,7 @@ var version = "2.2.2";
 //@include "spreads.jsx";
 //@include "styles.jsx";
 //@include "characters.jsx";
+//@include "getproperty.jsx"
 
 var doc = app.activeDocument;
 var path = 'c:/TEST/';
@@ -63,22 +64,27 @@ writetekst('<versionxml>'+ version +'</versionxml>\r');
 //
 defaultxml();
 //
-getfonts();
+fontstatus = getfonts();
 //
 getcolors();
 //
 getpref();
 //
-getgradients();
-//
-getCSV();
-//
-getmasterspreads();
-//
-getSpreads();
-//
-getstyles();
-//
+
+if (fontstatus==0){
+    //
+    getgradients();
+    //
+    getCSV();
+    //
+    getmasterspreads();
+    //
+    getSpreads();
+    //
+    getstyles();
+    //
+}
+
 
 
 writetekst('</export2html>\r');

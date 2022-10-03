@@ -16,39 +16,43 @@ function getword(pi){
     
     for(var p = 0; p < pi.words.length; p++){
         var word = pi.words[p];
-        //var paragraphstyleid = word.appliedParagraphStyle.id;
-        var charstyleid = word.appliedCharacterStyle.id;
-        //var strokecolorid = word.strokeColor.id;
-        //var fillcolorid = word.fillColor.id; 
-        var styleOverridden = word.styleOverridden;
-        var charstyleused=0;
-        var styleuniqueID = word.appliedCharacterStyle.styleUniqueId;
-        if (styleuniqueID != "") {
-          charstyleused=1;
-        }
-        if (styleOverridden == true){
-            //
-            //
-            //
-            //create_paragraphstyle(word);
-            //
-            //
-            //
-            cs = create_characterstyle(word);
-            //
-
-            // koppel style aan woord;
-            //
-            word.appliedCharacterStyle = cs.name;
-            //
-            // ophalen laatste informatie over betreffend woord
-            //
-           // var paragraphstyleid = word.appliedParagraphStyle.id;
+        if (word.isValid){
+            //var paragraphstyleid = word.appliedParagraphStyle.id;
             var charstyleid = word.appliedCharacterStyle.id;
-           // var strokecolorid = word.strokeColor.id;
-           // var fillcolorid = word.fillColor.id; 
-           charstyleused=1;
+            //var strokecolorid = word.strokeColor.id;
+            //var fillcolorid = word.fillColor.id; 
+            var styleOverridden = word.styleOverridden;
+            var charstyleused=0;
+            var styleuniqueID = word.appliedCharacterStyle.styleUniqueId;
+            if (styleuniqueID != "") {
+              charstyleused=1;
+            }
+            if (styleOverridden == true){
+                //
+                //
+                //
+                //create_paragraphstyle(word);
+                //
+                //
+                //
+                var ww =word;
+                cs = create_characterstyle(word);
+                //
+
+                // koppel style aan woord;
+                //
+                word.appliedCharacterStyle = cs.name;
+                //
+                // ophalen laatste informatie over betreffend woord
+                //
+              // var paragraphstyleid = word.appliedParagraphStyle.id;
+                var charstyleid = word.appliedCharacterStyle.id;
+              // var strokecolorid = word.strokeColor.id;
+              // var fillcolorid = word.fillColor.id; 
+              charstyleused=1;
+            }
         }
+        
          
         writetekst('<Word index="'+word.index+ '">\r');
         

@@ -1,4 +1,5 @@
 function getstyles(){
+    var doc = app.activeDocument;
     /*
     writetekst('<objectstyles>\r');
     for (var j = 0; j <doc.allObjectStyles.length; j++) {  
@@ -11,14 +12,20 @@ function getstyles(){
     writetekst('</objectstyles>\r');
     */
     writetekst('<paragraphstyles>\r');
-    for (var j = 0; j <doc.allParagraphStyles.length; j++) {  
-        var  style= doc.allParagraphStyles[j];
-        writetekst('<paragraphstyle nr="'+ j +'">\r');
-        inspectObjectProps_object( style);
-        inspectObjectProps_object_array_notnested(style.appliedFont,'style.appliedFont_');
-        writetekst('</paragraphstyle>\r');
-   
-    }
+      
+        for (var j = 0; j < doc.paragraphStyles.length; j++) {
+          
+          try{
+          var  style= doc.paragraphStyles[j];
+          writetekst('<paragraphstyle nr="'+ j +'">\r');
+          getproperty(style);
+          inspectObjectProps_object_array_notnested(style.appliedFont,'style.appliedFont_');
+          } catch(e){
+             
+          }
+          writetekst('</paragraphstyle>\r');
+        }
+
     writetekst('</paragraphstyles>\r');
     writetekst('<charstyles>\r');
    for (var j = 0; j <doc.allCharacterStyles.length; j++) {  

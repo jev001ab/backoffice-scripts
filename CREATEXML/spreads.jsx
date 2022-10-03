@@ -65,15 +65,15 @@ for (var ii= 0; ii <doc.spreads.length; ii++) {
               //
               //   DEBUG
               //
-               if (ID == 460){  // only for debug
-                //beep();
+               if (ID == 15932){  // only for debug
+                beep();
                // inspectObjectProps_object_array_notnested(ID,arr_t1 ,pi.textFramePreferences,'textFramePreferences_',file);
                 }
               //
               //
               //
               if(pi instanceof TextFrame || pi instanceof TextPath){
-                IsTextFrame(pi);
+                IsTextFrame(pi,ID);
             }
             //
             if (pi instanceof Rectangle) {
@@ -81,15 +81,15 @@ for (var ii= 0; ii <doc.spreads.length; ii++) {
             } 
             //
              if (pi instanceof Image || pi instanceof  EPS) { 
-                 IsImageEPS(pi);
+                 IsImageEPS(pi,ID);
                  }
              //
              if (pi instanceof PDF) { 
-                 IsPDF(pi);
+                 IsPDF(pi,ID);
                  }
              //
              if (pi instanceof Group) {
-                 IsGroup(pi);
+                 IsGroup(pi,ID);
                   }
              //
               if (pi instanceof Polygon) { 
@@ -101,7 +101,7 @@ for (var ii= 0; ii <doc.spreads.length; ii++) {
                  }
              //
                if (pi instanceof GraphicLine) { 
-                 IsGraphicLine(pi);
+                 IsGraphicLine(pi,ID);
                  }
              
              

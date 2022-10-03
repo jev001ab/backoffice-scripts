@@ -56,7 +56,7 @@ function inspectObjectProps_object(obj){
     for(var key2 in obj.properties){
         var item = '' + obj[key2];
         var n = item.indexOf('[object');
-        if (n!=-1){
+        if (n!==-1){
             try {   
                 var objID = obj[key2].id;
                 writetekst('<'+ key2 +'_id>'+  objID+ '</'+ key2 + '_id>\r');
@@ -86,7 +86,7 @@ function inspectObjectProps_object_array_notnested(obj,txt){
                 var tt = unicodeEscape(item);
                 writetekst('<'+ key2 +'>'+tt.replace(/&/g, "&amp;").replace(/>/g, "&gt;").replace(/</g, "&lt;")  + '</'+ key2 + '>\r');
                     } catch (e) {
-                        // beep();
+                         beep();
                     }
                 }
     
@@ -95,4 +95,28 @@ function inspectObjectProps_object_array_notnested(obj,txt){
     //
     } // end (obj !== null && obj !== undefined)
     writetekst('</'+ txt +'>\r');
+}
+
+function getObject(p) {
+    var i;
+    var arr = [];
+    //var p = app.fonts.item(fontname).properties;
+    var ignore = {parent: true, index: true};
+    for(i in p) {
+        if (!ignore[i]) {
+            arr.push ({
+                    key: i, 
+                    value: p[i] instanceof Enumerator ? String (p[i]) : p[i]
+                });
+        }
+    }
+    arr.sort (function (a,b) {return a.key > b.key});
+    return arr;
+}
+
+function typekit (f) {
+    if (f.location.indexOf ('Typekit') > 0) {
+        return ' (TK)';
+    }
+    return '';
 }
