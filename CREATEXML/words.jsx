@@ -27,6 +27,7 @@ function getword(pi){
             if (styleuniqueID != "") {
               charstyleused=1;
             }
+            /*
             if (styleOverridden == true){
                 //
                 //
@@ -51,6 +52,7 @@ function getword(pi){
               // var fillcolorid = word.fillColor.id; 
               charstyleused=1;
             }
+            */
         }
         
          

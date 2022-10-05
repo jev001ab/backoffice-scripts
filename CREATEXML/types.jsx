@@ -219,7 +219,7 @@ function IsTextFrame(pi,ID){
       //inspectObjectProps_object_array_notnested(paragraph,'paragraph_');
     //  inspectObjectProps_object( paragraph);
     //  inspectObjectProps_object_array_notnested(paragraph.appliedFont,'paragraph.appliedFont');
-      //getword(paragraph);
+      getword(paragraph);
       //
       // characters
       //
