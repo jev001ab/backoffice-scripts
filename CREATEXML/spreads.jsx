@@ -66,7 +66,7 @@ for (var ii= 0; ii <doc.spreads.length; ii++) {
               //   DEBUG
               //
                if (ID == 15932){  // only for debug
-                beep();
+                //beep();
                // inspectObjectProps_object_array_notnested(ID,arr_t1 ,pi.textFramePreferences,'textFramePreferences_',file);
                 }
               //
