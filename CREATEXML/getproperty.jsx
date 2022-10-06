@@ -8,10 +8,22 @@ function getproperty(property){
     var item1 = '' + property;
     var n1 = item1.indexOf('[object');
     if (n1==0){
+        
+
         for(key2 in property){
             if (!ignore[key2]) {
-                var item = '' + property[key2];
-                var n = item.indexOf('[object');
+                try{
+                    var a =key2;
+                    var item="";
+                    var b="";
+                    var n=0;
+                    b = property[key2].toString();
+                    item = '' + property[key2].toString();
+                    var n = item.indexOf('[object');
+                    //beep();
+                } catch (e) {
+                    //beep();
+                }
                 if (n!==-1){
                     try {   
                         var objID = property[key2].id;
@@ -26,7 +38,7 @@ function getproperty(property){
                     try {
                     writetekst('<'+ key2 +'>'+  property[key2]+ '</'+ key2 + '>\r');
                     } catch (e) {
-
+                                beep();
                     }
                 }
 
