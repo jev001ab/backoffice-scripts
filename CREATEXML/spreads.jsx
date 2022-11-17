@@ -56,6 +56,7 @@ for (var ii= 0; ii <doc.spreads.length; ii++) {
          for (var jj = 0; jj < allpageitems.length; jj++) {
              var pi = allpageitems[jj];
              var ID = pi.id;
+             pi.label = ID.toString();
              writetekst('<item ID="'+ ID +'">\r');
  
              var pip = pi.properties;

@@ -1,5 +1,5 @@
 // @target InDesign
-var version = "2.3.3";
+var version = "3.0.0";
 
 //@include "default.jsx";
 //@include "writetekst.jsx";
@@ -16,7 +16,8 @@ var version = "2.3.3";
 //@include "spreads.jsx";
 //@include "styles.jsx";
 //@include "characters.jsx";
-//@include "getproperty.jsx"
+//@include "getproperty.jsx";
+//@include "metadata.jsx";
 
 var doc = app.activeDocument;
 var path = 'c:/TEST/';
@@ -59,6 +60,11 @@ filexml.open('w');
 writetekst('<?xml version="1.0" encoding="UTF-8"?>\r');
 writetekst('<export2html>\r');
 writetekst('<versionxml>'+ version +'</versionxml>\r');
+//
+//
+//
+setmetadata();
+getmetadata();
 //
 // plaats defaultvalues in XML
 //
