@@ -1,5 +1,5 @@
 // @target InDesign
-var version = "3.0.1";
+var version = "3.0.2";
 
 //@include "default.jsx";
 //@include "writetekst.jsx";
@@ -100,4 +100,4 @@ filexml.close();
 //
 // save document
 //
-doc.save();
+//doc.save();  // niet save (niet altijd zeker of naam bekend is geeft foutmelding bij oplsaan document)
