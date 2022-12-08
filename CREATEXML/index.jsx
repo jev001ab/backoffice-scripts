@@ -1,5 +1,5 @@
 // @target InDesign
-var version = "3.0.0";
+var version = "3.0.1";
 
 //@include "default.jsx";
 //@include "writetekst.jsx";
@@ -95,3 +95,9 @@ if (fontstatus==0){
 
 writetekst('</export2html>\r');
 filexml.close();
+
+
+//
+// save document
+//
+doc.save();

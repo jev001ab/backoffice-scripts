@@ -12,7 +12,7 @@ function getmetadata(){
 }
 
 function setmetadata(){
-    var meta = doc.metadataPreferences;
-    meta.jobName = "Smart Content Creater Template";
-    meta.keywords = [app.version];
+//    var meta = doc.metadataPreferences;
+//    meta.jobName = "Smart Content Creater Template";
+//    meta.keywords = [app.version];
 }
