@@ -1,5 +1,5 @@
 // @target InDesign
-var version = "3.0.2";
+var version = "4.0.0";
 
 //@include "default.jsx";
 //@include "writetekst.jsx";
@@ -20,7 +20,7 @@ var version = "3.0.2";
 //@include "metadata.jsx";
 
 var doc = app.activeDocument;
-var path = 'c:/TEST/';
+var path = 'c:/temp/';
 
 
 var textFrame, recrangle, objExpOptions, 
